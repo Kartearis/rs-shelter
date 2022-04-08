@@ -1,0 +1,81 @@
+
+@import 'colors';
+@import 'typography';
+
+
+
+
+$site-width: 1280px;
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  font-family: $font-text;
+  font-size: $font-size-default;
+  background-color: $color-light-xl;
+  color: $color-dark-xl;
+  line-height: $font-line-default;
+}
+
+.container {
+  width: $site-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.container.header {
+  padding-top: 60px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+
+  h1 {
+    @include logo-title();
+    margin: 0;
+  }
+
+  p {
+    @include logo-subtitle();
+    margin: 0;
+    padding-left: 2px;
+  }
+}
+
+.gradient-background {
+  $color1: #211F20;
+  $color2: #5B483A;
+  $color3: #262425;
+
+  background: radial-gradient(ellipse 50% 50% at 0 0, $color2, $color3);
+
+}
+
+.navigation {
+  height: 60px;
+}

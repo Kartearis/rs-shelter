@@ -1,0 +1,94 @@
+@import 'colors';
+
+$font-header: Georgia, serif;
+$font-text: Arial, sans-serif;
+$font-size-default: 15px;
+$font-size-header: 32px;
+$font-line-header: 110%;
+$font-line-default: 160%;
+
+@mixin any-header {
+  font-family: $font-header;
+  font-weight: normal;
+}
+
+@mixin h2 {
+  @include any-header();
+  font-size: 44px;
+  line-height: 130%;
+}
+
+@mixin h3 {
+  @include any-header();
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+@mixin h3-mobile {
+  @include h3();
+  font-size: 25px;
+}
+
+@mixin h4 {
+  @include any-header();
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+@mixin h5 {
+  @include any-header();
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+@mixin h5-modal-window {
+  font-family: $font-header;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+@mixin any-text {
+  font-family: $font-text;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+@mixin paragraph-l {
+  @include any-text();
+  font-size: 15px;
+  line-height: 160%;
+}
+
+@mixin paragraph-s {
+  @include any-text();
+  font-style: italic;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+@mixin paragraph-mobile {
+  @include any-text();
+  font-size: 32px;
+  line-height: 160%;
+}
+
+@mixin logo-title {
+  @include any-header();
+  color: $color-primary;
+  font-size: $font-size-header;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+@mixin logo-subtitle {
+  @include any-text();
+  color: $color-light-xl;
+  font-size: 13px;
+  line-height: 110%;
+  letter-spacing: 0.1em;
+}
