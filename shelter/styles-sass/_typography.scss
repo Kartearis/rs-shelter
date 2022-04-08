@@ -92,3 +92,11 @@ $font-line-default: 160%;
   line-height: 110%;
   letter-spacing: 0.1em;
 }
+
+@mixin button-text {
+  @include any-header();
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  line-height: 130%;
+  color: $color-dark-3xl;
+}
