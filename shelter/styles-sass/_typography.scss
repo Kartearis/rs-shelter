@@ -100,3 +100,10 @@ $font-line-default: 160%;
   line-height: 130%;
   color: $color-dark-3xl;
 }
+
+@mixin p-legal {
+  @include any-text();
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+}

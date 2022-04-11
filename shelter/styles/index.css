@@ -39,6 +39,9 @@
 .custom-icons.vitamins {
   --path: url("../assets/images/icons/icon-vitamins.svg") ;
 }
+.custom-icons.credit-card {
+  --path: url("../assets/images/icons/icon-credit-card.svg") ;
+}
 .custom-icons.color-light-xl {
   background-color: #FFFFFF;
 }
@@ -582,6 +585,75 @@ body {
   letter-spacing: 0.06em;
   margin: 0;
   color: #545454;
+}
+
+.card-number {
+  display: inline-block;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  background-color: #F1CDB3;
+  border-radius: 9px;
+  padding: 10px 15px;
+  text-decoration: none;
+  width: 350px;
+}
+.card-number .custom-icons.size-30 {
+  width: 30px;
+  height: 23px;
+}
+.card-number .digits {
+  margin-left: 8.5px;
+}
+
+#donation.container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  padding-left: 183px;
+  padding-right: 182px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #F6F6F6;
+}
+#donation.container h3 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  max-width: 300px;
+  margin: 0;
+  color: #545454;
+}
+#donation.container .info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#donation.container .info-block h5 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  margin: 0;
+  color: #545454;
+}
+#donation.container .info-block .legal {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  color: #B2B2B2;
 }
 
 /*# sourceMappingURL=index.css.map */

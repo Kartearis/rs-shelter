@@ -296,3 +296,61 @@ body {
     }
   }
 }
+
+.card-number {
+  display: inline-block;
+  @include h4();
+  color: $color-dark-l;
+  background-color: $color-primary;
+  border-radius: 9px;
+  padding: 10px 15px;
+  text-decoration: none;
+  width: 350px;
+
+  .custom-icons.size-30 {
+    width: 30px;
+    height: 23px;
+  }
+
+  .digits {
+    margin-left: 8.5px;
+  }
+}
+
+#donation.container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  padding-left: 183px;
+  padding-right: 182px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: $color-light-l;
+
+  h3 {
+    @include h3();
+    max-width: 300px;
+    margin: 0;
+    color: $color-dark-l;
+  }
+
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h5 {
+      @include h5();
+      margin: 0;
+      color: $color-dark-l;
+    }
+
+    .legal {
+      @include p-legal();
+      margin: 0;
+      color: $color-dark-m;
+    }
+  }
+}
