@@ -354,3 +354,36 @@ body {
     }
   }
 }
+
+.gradient-background-footer {
+  $color1: #513D2F;
+  $color2: #1A1A1C;
+
+  background: url("../assets/images/noise_transparent.png"),
+  radial-gradient(ellipse 80% 50% at 50px 50%, $color1, $color2);
+}
+
+footer .container {
+  padding: 40px 40px 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 160px;
+
+  .info-block {
+    padding-top: 16px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      @include h3();
+      color: $color-light-xl;
+
+    }
+  }
+
+}
