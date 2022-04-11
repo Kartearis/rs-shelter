@@ -55,10 +55,24 @@ body {
       @include paragraph-l();
       color: $color-dark-s;
       letter-spacing: 0.08px;
+      transition: transform 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        color: $color-light-s;
+      }
+
+      &:active {
+        transform: scale(1.3);
+      }
 
       a {
+        display: block;
+        width: 100%;
+        height: 100%;
         color: inherit;
         text-decoration: none;
+        transition: color 0.3s;
       }
     }
 
@@ -67,6 +81,29 @@ body {
       border-bottom: 3px solid $color-primary;
     }
 
+  }
+}
+
+a.no-style {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.logo-link {
+  @extend a, .no-style;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1.3);
+  }
+
+  .logo {
+    height: 100%;
   }
 }
 
@@ -101,20 +138,31 @@ body {
   border: 2px solid $color-primary;
   padding: 13px 43px;
   background-color: transparent;
-}
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 
-.button:hover {
-  cursor: pointer;
-}
+  &:hover:not([disabled]) {
+    cursor: pointer;
+    border-color: $color-primary-light;
+    background-color: $color-primary-light;
+  }
 
-.button[disabled] {
-  border-color: $color-dark-s;
-  color: $color-dark-s;
+  &:active:not([disabled]) {
+    transform: scale(1.3);
+  }
+
+  &[disabled] {
+    border-color: $color-dark-s;
+    color: $color-dark-s;
+  }
 }
 
 .button-solid {
   @extend .button;
   background-color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
 }
 
 .button.active {

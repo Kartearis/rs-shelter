@@ -55,14 +55,45 @@ body {
   line-height: 160%;
   color: #CDCDCD;
   letter-spacing: 0.08px;
+  transition: transform 0.3s;
+}
+.navigation .nav-list .nav-item:hover {
+  cursor: pointer;
+  color: #FAFAFA;
+}
+.navigation .nav-list .nav-item:active {
+  transform: scale(1.3);
 }
 .navigation .nav-list .nav-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
   color: inherit;
   text-decoration: none;
+  transition: color 0.3s;
 }
 .navigation .nav-list .nav-item.active {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
+}
+
+a.no-style, a.logo-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.logo-link {
+  transition: transform 0.3s;
+}
+a.logo-link:hover {
+  transform: scale(1.1);
+}
+a.logo-link:active {
+  transform: scale(1.3);
+}
+a.logo-link .logo {
+  height: 100%;
 }
 
 .logo {
@@ -148,12 +179,16 @@ body {
   border: 2px solid #F1CDB3;
   padding: 13px 43px;
   background-color: transparent;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
-
-.button:hover, .button-solid:hover {
+.button:hover:not([disabled]), .button-solid:hover:not([disabled]) {
   cursor: pointer;
+  border-color: #FDDCC4;
+  background-color: #FDDCC4;
 }
-
+.button:active:not([disabled]), .button-solid:active:not([disabled]) {
+  transform: scale(1.3);
+}
 .button[disabled], [disabled].button-solid {
   border-color: #CDCDCD;
   color: #CDCDCD;
@@ -161,6 +196,9 @@ body {
 
 .button-solid, .button.active, .active.button-solid {
   background-color: #F1CDB3;
+}
+.button-solid:hover, .button.active:hover {
+  background-color: #FDDCC4;
 }
 
 .button.circle,
@@ -182,6 +220,7 @@ body {
   align-items: center;
   gap: 30px;
   padding-bottom: 30px;
+  transition: background-color 0.3s;
 }
 .card h5 {
   font-family: Georgia, serif;
@@ -192,6 +231,19 @@ body {
   line-height: 115%;
   color: #545454;
 }
+.card:hover {
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.card:hover .button, .card:hover .button-solid {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
 
 .container.header {
   padding-top: 30px;
@@ -199,6 +251,9 @@ body {
 }
 .container.header .nav-item {
   color: #545454;
+}
+.container.header .nav-item:hover {
+  color: #292929;
 }
 .container.header .nav-item.active {
   color: #292929;
@@ -580,12 +635,21 @@ footer .container .info-block a {
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
+  text-decoration: none;
   color: #F1CDB3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  transition: color 0.3s, transform 0.3s;
+}
+footer .container .info-block a:hover {
+  cursor: pointer;
+  color: #FDDCC4;
+}
+footer .container .info-block a:active {
+  transform: scale(1.3);
 }
 footer .container .info-block a .custom-icons.wide {
   width: 40px;

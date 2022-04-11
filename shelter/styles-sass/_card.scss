@@ -10,6 +10,7 @@
   align-items: center;
   gap: 30px;
   padding-bottom: 30px;
+  transition: background-color 0.3s;
 
   h5 {
     @include any-header();
@@ -18,5 +19,15 @@
     letter-spacing: 0.06em;
     line-height: 115%;
     color: $color-dark-l;
+  }
+
+  &:hover {
+    background-color: $color-light-xl;
+    cursor: pointer;
+
+    .button {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
   }
 }

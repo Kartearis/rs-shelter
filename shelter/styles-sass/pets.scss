@@ -2,12 +2,21 @@
 @import 'colors';
 @import 'card';
 
+header {
+  position: sticky;
+  top: 0;
+}
+
 .container.header {
   padding-top: 30px;
   padding-bottom: 30px;
 
   .nav-item {
     color: $color-dark-l;
+
+    &:hover {
+      color: $color-dark-3xl;
+    }
 
     &.active {
       color: $color-dark-3xl;
