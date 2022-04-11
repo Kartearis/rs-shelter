@@ -158,6 +158,12 @@ body {
   }
 }
 
+@each $colorname, $color in $colors {
+  .background-#{$colorname} {
+    background-color: $color;
+  }
+}
+
 #about.container {
   padding-top: 80px;
   padding-bottom: 100px;

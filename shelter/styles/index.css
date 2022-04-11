@@ -451,6 +451,50 @@ body {
   color: #CDCDCD;
 }
 
+.background-color-light-xl {
+  background-color: #FFFFFF;
+}
+
+.background-color-light-l {
+  background-color: #F6F6F6;
+}
+
+.background-color-light-s {
+  background-color: #FAFAFA;
+}
+
+.background-color-dark-s {
+  background-color: #CDCDCD;
+}
+
+.background-color-dark-m {
+  background-color: #B2B2B2;
+}
+
+.background-color-dark-l {
+  background-color: #545454;
+}
+
+.background-color-dark-xl {
+  background-color: #4C4C4C;
+}
+
+.background-color-dark-2xl {
+  background-color: #444444;
+}
+
+.background-color-dark-3xl {
+  background-color: #292929;
+}
+
+.background-color-primary {
+  background-color: #F1CDB3;
+}
+
+.background-color-primary-light {
+  background-color: #FDDCC4;
+}
+
 #about.container {
   padding-top: 80px;
   padding-bottom: 100px;
