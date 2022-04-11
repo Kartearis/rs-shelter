@@ -42,6 +42,15 @@
 .custom-icons.credit-card {
   --path: url("../assets/images/icons/icon-credit-card.svg") ;
 }
+.custom-icons.email {
+  --path: url("../assets/images/icons/icon-email.svg") ;
+}
+.custom-icons.marker {
+  --path: url("../assets/images/icons/icon-marker.svg") ;
+}
+.custom-icons.phone {
+  --path: url("../assets/images/icons/icon-phone.svg") ;
+}
 .custom-icons.color-light-xl {
   background-color: #FFFFFF;
 }
@@ -674,7 +683,38 @@ footer .container .info-block {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
+}
+footer .container .info-block.left {
+  width: 278px;
+  flex-shrink: 0;
+  gap: 40px;
+}
+footer .container .info-block.right {
+  gap: 33px;
+}
+footer .container .info-block a {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
+}
+footer .container .info-block a .custom-icons.wide {
+  width: 40px;
+  height: 32px;
+  flex-shrink: 0;
+}
+footer .container .info-block a .custom-icons.tall {
+  width: 22px;
+  height: 32px;
+  flex-shrink: 0;
 }
 footer .container .info-block h3 {
   font-family: Georgia, serif;
@@ -683,6 +723,8 @@ footer .container .info-block h3 {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 0.059em;
 }
 
 /*# sourceMappingURL=index.css.map */

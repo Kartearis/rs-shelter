@@ -107,3 +107,10 @@ $font-line-default: 160%;
   font-size: 12px;
   line-height: 18px;
 }
+
+@mixin contact {
+  @include any-header();
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}

@@ -377,11 +377,48 @@ footer .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+
+
+    &.left {
+      width: 278px;
+      flex-shrink: 0;
+      gap: 40px;
+    }
+
+    &.right {
+      gap: 33px;
+    }
+
+    a {
+      @include contact();
+      color: $color-primary;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+
+      .custom-icons.wide {
+        width: 40px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+
+      .custom-icons.tall {
+        width: 22px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+    }
 
     h3 {
       @include h3();
       color: $color-light-xl;
+      margin: 0;
+      // Fix for designers' fails
+      letter-spacing: 0.059em;
 
     }
   }
