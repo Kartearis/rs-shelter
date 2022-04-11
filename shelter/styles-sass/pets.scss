@@ -1,0 +1,67 @@
+@import 'shared';
+@import 'colors';
+@import 'card';
+
+.container.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .nav-item {
+    color: $color-dark-l;
+
+    &.active {
+      color: $color-dark-3xl;
+    }
+  }
+}
+
+.logo {
+  h1 {
+    color: $color-dark-l;
+  }
+
+  p {
+    color: $color-dark-3xl;
+  }
+}
+
+#pets.container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+
+  h3 {
+    @include h3();
+    color: $color-dark-l;
+    margin: 0;
+    text-align: center;
+  }
+
+  .card-container {
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px 40px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .button {
+      @include h4();
+    }
+  }
+}
+
+
+
+@import 'footer';

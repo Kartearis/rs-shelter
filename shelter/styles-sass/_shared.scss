@@ -1,0 +1,132 @@
+@import 'colors';
+@import 'typography';
+
+$site-width: 1280px;
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include any-text();
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  background-color: $color-dark-3xl;
+  color: $color-dark-xl;
+}
+
+.container {
+  width: $site-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.container.header {
+  padding-top: 60px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding-top: 16px;
+
+    .nav-item {
+      @include paragraph-l();
+      color: $color-dark-s;
+      letter-spacing: 0.08px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    .nav-item.active {
+      color: $color-light-s;
+      border-bottom: 3px solid $color-primary;
+    }
+
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+
+  h1 {
+    @include logo-title();
+    margin: 0;
+  }
+
+  p {
+    @include logo-subtitle();
+    margin: 0;
+    padding-left: 2px;
+  }
+}
+
+@each $colorname, $color in $colors {
+  .background-#{$colorname} {
+    background-color: $color;
+  }
+}
+
+.button {
+  @include button-text();
+  border-radius: 100px;
+  border: 2px solid $color-primary;
+  padding: 13px 43px;
+  background-color: transparent;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button[disabled] {
+  border-color: $color-dark-s;
+  color: $color-dark-s;
+}
+
+.button-solid {
+  @extend .button;
+  background-color: $color-primary;
+}
+
+.button.active {
+  @extend .button-solid;
+}
+
+.button.circle,
+.button-solid.circle{
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

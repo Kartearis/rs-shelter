@@ -2,96 +2,9 @@
 @import 'colors';
 @import 'typography';
 @import 'icons';
+@import 'shared';
+@import 'card';
 
-$site-width: 1280px;
-
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 0;
-  font-family: $font-text;
-  font-size: $font-size-default;
-  background-color: $color-dark-3xl;
-  color: $color-dark-xl;
-  line-height: $font-line-default;
-}
-
-.container {
-  width: $site-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.container.header {
-  padding-top: 60px;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 60px;
-
-  .nav-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 35px;
-    list-style: none;
-    margin: 0;
-    padding-top: 16px;
-
-    .nav-item {
-      @include paragraph-l();
-      color: $color-dark-s;
-      letter-spacing: 0.08px;
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-    }
-
-    .nav-item.active {
-      color: $color-light-s;
-      border-bottom: 3px solid $color-primary;
-    }
-
-  }
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: auto;
-
-  h1 {
-    @include logo-title();
-    margin: 0;
-  }
-
-  p {
-    @include logo-subtitle();
-    margin: 0;
-    padding-left: 2px;
-  }
-}
 
 .gradient-background-header {
   $color1: #211F20;
@@ -110,23 +23,6 @@ body {
   // 120px is 180px - 60px padding
   background: url("../assets/images/noise_transparent.png"),
   left -120px / 100% 908px radial-gradient(ellipse 50% 50% at 0 0, $color2, $color3);
-}
-
-.button {
-  @include button-text();
-  border-radius: 100px;
-  border: 2px solid $color-primary;
-  padding: 13px 43px;
-  background-color: transparent;
-}
-
-.button:hover {
-  cursor: pointer;
-}
-
-.button-solid {
-  @extend .button;
-  background-color: $color-primary;
 }
 
 .container.hero {
@@ -155,12 +51,6 @@ body {
       margin: 0;
       color: $color-dark-s;
     }
-  }
-}
-
-@each $colorname, $color in $colors {
-  .background-#{$colorname} {
-    background-color: $color;
   }
 }
 
@@ -215,16 +105,6 @@ body {
     padding: 0;
     gap: 53px;
 
-    .button.circle,
-    .button-solid.circle{
-      padding: 0;
-      width: 52px;
-      height: 52px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     .card-container {
       // Вынести типичные флексы в виде миксинов
       display: flex;
@@ -232,26 +112,6 @@ body {
       justify-content: space-between;
       align-items: center;
       gap: 90px;
-
-      .card {
-        background-color: $color-light-s;
-        border-radius: 9px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 30px;
-        padding-bottom: 30px;
-
-        h5 {
-          @include any-header();
-          margin: 0;
-          font-size: 20px;
-          letter-spacing: 0.06em;
-          line-height: 115%;
-          color: $color-dark-l;
-        }
-      }
     }
   }
 }
@@ -361,72 +221,4 @@ body {
   }
 }
 
-.gradient-background-footer {
-  $color1: #513D2F;
-  $color2: #1A1A1C;
-
-  background: url("../assets/images/noise_transparent.png"),
-  radial-gradient(ellipse 80% 50% at 50px 50%, $color1, $color2);
-}
-
-footer .container {
-  padding: 40px 40px 0 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 160px;
-
-  .info-block {
-    padding-top: 16px;
-    padding-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-
-
-    &.left {
-      width: 278px;
-      flex-shrink: 0;
-      gap: 40px;
-    }
-
-    &.right {
-      gap: 33px;
-    }
-
-    a {
-      @include contact();
-      color: $color-primary;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-
-
-      .custom-icons.wide {
-        width: 40px;
-        height: 32px;
-        flex-shrink: 0;
-      }
-
-      .custom-icons.tall {
-        width: 22px;
-        height: 32px;
-        flex-shrink: 0;
-      }
-    }
-
-    h3 {
-      @include h3();
-      color: $color-light-xl;
-      margin: 0;
-      // Fix for designers' fails
-      letter-spacing: 0.059em;
-
-    }
-  }
-
-}
+@import 'footer';
