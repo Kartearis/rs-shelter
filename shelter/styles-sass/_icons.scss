@@ -1,0 +1,41 @@
+@import 'colors';
+
+$icons: Arrow, bowls-and-cups, collars-leashes, medicines, pet-food, shampoos, sleeping-area, toys, transportation, vitamins;
+$min-icon-size: 10;
+$max-icon-size: 60;
+
+
+.custom-icons {
+  --path: url("../assets/images/icons/icon-Arrow.svg");
+  vertical-align: bottom;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: $color-dark-3xl;
+  transition: filter 0.3s, transform 0.3s;
+  -webkit-mask: var(--path) 50% 50%/contain no-repeat;
+  mask: var(--path) 50% 50%/contain no-repeat;
+
+  @each $name in $icons {
+    &.#{$name} {
+      --path: url("../assets/images/icons/icon-#{$name}.svg")
+    }
+  }
+
+  @each $colorname, $color in $colors {
+    &.#{$colorname} {
+      background-color: $color;
+    }
+  }
+
+  @for $size from $min-icon-size through $max-icon-size {
+    &.size-#{$size} {
+      width: #{$size}px;
+      height: #{$size}px;
+    }
+  }
+
+  &.mirrored {
+    transform: scaleX(-1);
+  }
+}

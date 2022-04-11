@@ -1,12 +1,9 @@
 
 @import 'colors';
 @import 'typography';
-
-
-
+@import 'icons';
 
 $site-width: 1280px;
-
 
 
 * {
@@ -187,26 +184,6 @@ body {
   }
 }
 
-.custom-icons {
-  --path: url("../assets/images/icons/Arrow.svg");
-  vertical-align: bottom;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-color: $color-dark-3xl;
-  transition: filter 0.3s, transform 0.3s;
-  -webkit-mask: var(--path) 50% 50%/contain no-repeat;
-  mask: var(--path) 50% 50%/contain no-repeat;
-}
-
-.custom-icons.arrow {
-  --path: url("../assets/images/icons/Arrow.svg");
-}
-
-.custom-icons.mirrored {
-  transform: scaleX(-1);
-}
-
 #pets.container {
   padding-top: 80px;
   padding-bottom: 100px;
@@ -269,6 +246,53 @@ body {
           color: $color-dark-l;
         }
       }
+    }
+  }
+}
+
+#help.container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  background-color: $color-light-xl;
+
+  h3 {
+    @include h3();
+    max-width: 310px;
+    text-align: center;
+    margin: 0;
+    margin-left: 1px;
+    //letter-spacing: 0.056em;
+    color: $color-dark-l;
+  }
+
+  .inner-container {
+    padding-left: 87px;
+    padding-right: 87px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 55px 119px;
+
+    .info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: flex-start;
+      align-items: center;
+
+      h4 {
+        @include h4();
+        margin: 0;
+        color: $color-dark-l;
+      }
+
     }
   }
 }
