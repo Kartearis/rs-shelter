@@ -789,10 +789,10 @@ a.logo-link .logo {
     padding-top: 22px;
     text-align: justify;
   }
-}
-#about.container .img-block {
-  width: 260px;
-  height: 353.6px;
+  #about.container .img-block {
+    width: 260px;
+    height: 353.6px;
+  }
 }
 
 #pets.container {
