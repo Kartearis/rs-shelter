@@ -69,6 +69,48 @@ header {
       @include h4();
     }
   }
+
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+    gap: 30px;
+    padding-bottom: 76px;
+
+    .card-container {
+      padding: 0;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+
+      .card:nth-last-child(-n+2) {
+        display: none;
+      }
+    }
+
+    .button-container {
+      padding-top: 10px;
+    }
+  }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    gap: 42px;
+    padding-top: 42px;
+    padding-bottom: 42px;
+
+    h3 {
+      @include h3-mobile();
+    }
+
+    .card-container {
+      padding: 0;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+
+      .card:nth-last-child(-n+5) {
+        display: none;
+      }
+    }
+
+    .button-container {
+      gap: 10px;
+    }
+  }
 }
 
 

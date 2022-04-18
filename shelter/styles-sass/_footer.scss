@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'typography';
 @import 'icons';
+@import 'breakpoints';
 
 .gradient-background-footer {
   $color1: #513D2F;
@@ -77,6 +78,61 @@ footer .container {
       // Fix for designers' fails
       letter-spacing: 0.059em;
 
+    }
+  }
+
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+    padding: 30px 30px+34px 0 30px+34px;
+    display: grid;
+    grid-template-columns: 278px 302px;
+    grid-template-rows: 234px 1fr;
+    gap: 65px 60px;
+
+    .info-block {
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    .img-block {
+      display: block;
+      grid-column: 1/span 2;
+      width: 300px;
+      height: 310px;
+      justify-self: center;
+    }
+  }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    padding: 30px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .info-block {
+      padding: 0;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 40px;
+
+      &.right {
+        gap: 40px;
+      }
+
+      &.right a {
+        align-self: flex-start;
+      }
+
+      h3 {
+        @include h3-mobile();
+        text-align: center;
+        width: 250px;
+      }
+    }
+
+    .img-block {
+      display: block;
+      width: 260px;
+      height: 269px;
     }
   }
 }
