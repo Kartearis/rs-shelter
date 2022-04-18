@@ -238,6 +238,30 @@
       }
     }
   }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    padding-top: 42px;
+    padding-bottom: 42px;
+    gap: 42px;
+
+    h3 {
+      @include h3-mobile();
+    }
+
+    .inner-container {
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      .card-container {
+        gap: 40px;
+        order: -1;
+
+        .card:not(:nth-child(1)) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 #help.container {
@@ -301,6 +325,37 @@
       gap: 55px 60px;
     }
   }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    padding-top: 42px;
+    padding-bottom: 42px;
+    gap: 42px;
+
+    h3 {
+      @include h3-mobile();
+      width: 250px;
+    }
+
+    .inner-container {
+      width: 100%;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      //grid-template-rows: repeat(10, 1fr);
+      gap: 30px;
+
+      .info-block {
+        gap: 20px;
+
+        h4 {
+          @include h5();
+        }
+      }
+      span.size-60 {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
 }
 
 .card-number {
@@ -329,6 +384,11 @@
 
   .digits {
     margin-left: 8.5px;
+  }
+
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    @include h5();
+    width: 281px;
   }
 }
 
@@ -379,6 +439,38 @@
       width: 380px;
       height: 282px;
 
+    }
+  }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    padding: 42px 10px;
+    flex-direction: column-reverse;
+    gap: 42px;
+
+    .info-block {
+      width: 300px;
+      align-items: center;
+
+      h3 {
+        @include h3-mobile();
+        text-align: center;
+        width: 220px;
+        margin: 0 auto;
+      }
+
+      h5 {
+        line-height: 160%;
+        letter-spacing: 0;
+        text-align: center;
+      }
+
+      .legal {
+        text-align: justify;
+        padding: 0 10px;
+      }
+    }
+    .img-block {
+      width: 260px;
+      height: 135.2px;
     }
   }
 }

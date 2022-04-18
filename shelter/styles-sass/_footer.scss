@@ -100,8 +100,39 @@ footer .container {
       height: 310px;
       justify-self: center;
     }
+  }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    padding: 30px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 
+    .info-block {
+      padding: 0;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 40px;
 
+      &.right {
+        gap: 40px;
+      }
 
+      &.right a {
+        align-self: flex-start;
+      }
+
+      h3 {
+        @include h3-mobile();
+        text-align: center;
+        width: 250px;
+      }
+    }
+
+    .img-block {
+      display: block;
+      width: 260px;
+      height: 269px;
+    }
   }
 }

@@ -781,5 +781,41 @@ footer .container .info-block h3 {
     justify-self: center;
   }
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  footer .container {
+    padding: 30px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  footer .container .info-block {
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+  }
+  footer .container .info-block.right {
+    gap: 40px;
+  }
+  footer .container .info-block.right a {
+    align-self: flex-start;
+  }
+  footer .container .info-block h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    font-size: 25px;
+    text-align: center;
+    width: 250px;
+  }
+  footer .container .img-block {
+    display: block;
+    width: 260px;
+    height: 269px;
+  }
+}
 
 /*# sourceMappingURL=pets.css.map */
