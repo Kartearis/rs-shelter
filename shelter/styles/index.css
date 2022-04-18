@@ -308,7 +308,7 @@
     --site-width: 768px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   :root {
     --site-width: 320px;
   }
@@ -353,7 +353,7 @@ body {
     padding-right: 30px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .container {
     padding-left: 10px;
     padding-right: 10px;
@@ -368,7 +368,7 @@ body {
     padding-top: 30px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .container.header {
     padding-top: 30px;
   }
@@ -392,7 +392,7 @@ body {
   cursor: pointer;
   transform: scale(1.05);
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .navigation .menu-button {
     display: block;
   }
@@ -436,7 +436,7 @@ body {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .navigation .nav-list {
     display: none;
   }
@@ -615,7 +615,7 @@ a.logo-link .logo {
     --gradient-offset: -90px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   :root {
     --gradient-size: 823px;
     --gradient-offset: -90px;
@@ -683,7 +683,7 @@ a.logo-link .logo {
     height: 593px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .container.hero {
     flex-direction: column;
     align-items: center;
@@ -758,7 +758,7 @@ a.logo-link .logo {
     width: 430px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   #about.container {
     flex-direction: column-reverse;
     align-items: center;
@@ -842,7 +842,7 @@ a.logo-link .logo {
     display: none;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   #pets.container {
     padding-top: 42px;
     padding-bottom: 42px;
@@ -934,7 +934,7 @@ a.logo-link .logo {
     gap: 55px 60px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   #help.container {
     padding-top: 42px;
     padding-bottom: 42px;
@@ -1000,7 +1000,7 @@ a.logo-link .logo {
 .card-number .digits {
   margin-left: 8.5px;
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .card-number {
     font-family: Georgia, serif;
     font-weight: normal;
@@ -1069,7 +1069,7 @@ a.logo-link .logo {
     height: 282px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   #donation.container {
     padding: 42px 10px;
     flex-direction: column-reverse;
@@ -1415,7 +1415,7 @@ a.logo-link .logo {
     --site-width: 768px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   :root {
     --site-width: 320px;
   }
@@ -1511,7 +1511,7 @@ footer .container .info-block h3 {
     justify-self: center;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   footer .container {
     padding: 30px 10px 0 10px;
     display: flex;

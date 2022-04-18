@@ -11,7 +11,7 @@
     --site-width: 768px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   :root {
     --site-width: 320px;
   }
@@ -56,7 +56,7 @@ body {
     padding-right: 30px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .container {
     padding-left: 10px;
     padding-right: 10px;
@@ -71,7 +71,7 @@ body {
     padding-top: 30px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .container.header {
     padding-top: 30px;
   }
@@ -95,7 +95,7 @@ body {
   cursor: pointer;
   transform: scale(1.05);
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .navigation .menu-button {
     display: block;
   }
@@ -139,7 +139,7 @@ body {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .navigation .nav-list {
     display: none;
   }
@@ -391,7 +391,7 @@ header {
     padding-top: 10px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   #pets.container {
     gap: 42px;
     padding-top: 42px;
@@ -728,7 +728,7 @@ header {
     --site-width: 768px;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   :root {
     --site-width: 320px;
   }
@@ -824,7 +824,7 @@ footer .container .info-block h3 {
     justify-self: center;
   }
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   footer .container {
     padding: 30px 10px 0 10px;
     display: flex;
