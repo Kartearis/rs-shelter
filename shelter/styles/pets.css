@@ -391,6 +391,32 @@ header {
     padding-top: 10px;
   }
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  #pets.container {
+    gap: 42px;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  #pets.container h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    font-size: 25px;
+  }
+  #pets.container .card-container {
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  #pets.container .card-container .card:nth-last-child(-n+5) {
+    display: none;
+  }
+  #pets.container .button-container {
+    gap: 10px;
+  }
+}
 
 .custom-icons {
   --path: url("../assets/images/icons/icon-Arrow.svg");
