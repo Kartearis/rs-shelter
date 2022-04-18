@@ -39,6 +39,11 @@ body {
     padding-left: 30px;
     padding-right: 30px;
   }
+
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .container.header {
@@ -48,6 +53,9 @@ body {
   @media #{map-get(map-get($breakpoints, medium), query)} {
     padding-top: 30px;
   }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    padding-top: 30px;
+  }
 }
 
 .navigation {
@@ -55,6 +63,24 @@ body {
   flex-direction: row;
   justify-content: space-between;
   height: 60px;
+
+  .menu-button {
+    display: none;
+    width: 30px;
+    height: 22px;
+    transition: transform 0.3s;
+    margin-right: 53px - 10px;
+    align-self: center;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    @media #{map-get(map-get($breakpoints, small), query)} {
+      display: block;
+    }
+  }
 
   .nav-list {
     display: flex;
@@ -94,6 +120,10 @@ body {
     .nav-item.active {
       color: $color-light-s;
       border-bottom: 3px solid $color-primary;
+    }
+
+    @media #{map-get(map-get($breakpoints, small), query)} {
+      display: none;
     }
 
   }

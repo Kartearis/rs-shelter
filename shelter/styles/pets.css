@@ -1,6 +1,11 @@
 :root {
   --site-width: 1280px;
 }
+@media (min-width: 1280px) {
+  :root {
+    --site-width: 1280px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1279px) {
   :root {
     --site-width: 768px;
@@ -51,11 +56,22 @@ body {
     padding-right: 30px;
   }
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 .container.header {
   padding-top: 60px;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
+  .container.header {
+    padding-top: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
   .container.header {
     padding-top: 30px;
   }
@@ -66,6 +82,23 @@ body {
   flex-direction: row;
   justify-content: space-between;
   height: 60px;
+}
+.navigation .menu-button {
+  display: none;
+  width: 30px;
+  height: 22px;
+  transition: transform 0.3s;
+  margin-right: 43px;
+  align-self: center;
+}
+.navigation .menu-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .navigation .menu-button {
+    display: block;
+  }
 }
 .navigation .nav-list {
   display: flex;
@@ -105,6 +138,11 @@ body {
 .navigation .nav-list .nav-item.active {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .navigation .nav-list {
+    display: none;
+  }
 }
 
 a.no-style, a.logo-link {
@@ -390,6 +428,9 @@ header {
 .custom-icons.phone {
   --path: url("../assets/images/icons/icon-phone.svg") ;
 }
+.custom-icons.burger {
+  --path: url("../assets/images/icons/icon-burger.svg") ;
+}
 .custom-icons.color-light-xl {
   background-color: #FFFFFF;
 }
@@ -633,6 +674,11 @@ header {
 
 :root {
   --site-width: 1280px;
+}
+@media (min-width: 1280px) {
+  :root {
+    --site-width: 1280px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   :root {

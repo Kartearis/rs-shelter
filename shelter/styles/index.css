@@ -51,6 +51,9 @@
 .custom-icons.phone {
   --path: url("../assets/images/icons/icon-phone.svg") ;
 }
+.custom-icons.burger {
+  --path: url("../assets/images/icons/icon-burger.svg") ;
+}
 .custom-icons.color-light-xl {
   background-color: #FFFFFF;
 }
@@ -295,6 +298,11 @@
 :root {
   --site-width: 1280px;
 }
+@media (min-width: 1280px) {
+  :root {
+    --site-width: 1280px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1279px) {
   :root {
     --site-width: 768px;
@@ -345,11 +353,22 @@ body {
     padding-right: 30px;
   }
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 .container.header {
   padding-top: 60px;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
+  .container.header {
+    padding-top: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
   .container.header {
     padding-top: 30px;
   }
@@ -360,6 +379,23 @@ body {
   flex-direction: row;
   justify-content: space-between;
   height: 60px;
+}
+.navigation .menu-button {
+  display: none;
+  width: 30px;
+  height: 22px;
+  transition: transform 0.3s;
+  margin-right: 43px;
+  align-self: center;
+}
+.navigation .menu-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .navigation .menu-button {
+    display: block;
+  }
 }
 .navigation .nav-list {
   display: flex;
@@ -399,6 +435,11 @@ body {
 .navigation .nav-list .nav-item.active {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .navigation .nav-list {
+    display: none;
+  }
 }
 
 a.no-style, a.logo-link {
@@ -642,6 +683,38 @@ a.logo-link .logo {
     height: 593px;
   }
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .container.hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+  }
+  .container.hero .info-block {
+    padding-top: 0;
+    width: 300px;
+    align-items: center;
+  }
+  .container.hero .info-block h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    font-size: 25px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 250px;
+  }
+  .container.hero .info-block p {
+    text-align: center;
+  }
+  .container.hero .img-block {
+    align-self: flex-end;
+    margin-top: 5px;
+    width: 260px;
+    height: 271.77px;
+  }
+}
 
 #about.container {
   padding-top: 80px;
@@ -684,6 +757,42 @@ a.logo-link .logo {
   #about.container .info-block {
     width: 430px;
   }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  #about.container {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 42px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 42.4px;
+    gap: 42px;
+  }
+  #about.container .info-block {
+    width: 300px;
+    align-items: center;
+  }
+  #about.container .info-block h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    font-size: 25px;
+    margin: 0 auto;
+    width: 250px;
+    text-align: center;
+  }
+  #about.container .info-block p {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 22px;
+    text-align: justify;
+  }
+}
+#about.container .img-block {
+  width: 260px;
+  height: 353.6px;
 }
 
 #pets.container {
@@ -940,6 +1049,9 @@ a.logo-link .logo {
 .custom-icons.phone {
   --path: url("../assets/images/icons/icon-phone.svg") ;
 }
+.custom-icons.burger {
+  --path: url("../assets/images/icons/icon-burger.svg") ;
+}
 .custom-icons.color-light-xl {
   background-color: #FFFFFF;
 }
@@ -1183,6 +1295,11 @@ a.logo-link .logo {
 
 :root {
   --site-width: 1280px;
+}
+@media (min-width: 1280px) {
+  :root {
+    --site-width: 1280px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   :root {
