@@ -631,6 +631,20 @@ header {
   transform: scaleX(-1);
 }
 
+:root {
+  --site-width: 1280px;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  :root {
+    --site-width: 768px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  :root {
+    --site-width: 320px;
+  }
+}
+
 .gradient-background-footer {
   background: url("../assets/images/noise_transparent.png"), radial-gradient(ellipse 80% 50% at 50px 50%, #513D2F, #1A1A1C);
 }
@@ -700,6 +714,26 @@ footer .container .info-block h3 {
   color: #FFFFFF;
   margin: 0;
   letter-spacing: 0.059em;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  footer .container {
+    padding: 30px 64px 0 64px;
+    display: grid;
+    grid-template-columns: 278px 302px;
+    grid-template-rows: 234px 1fr;
+    gap: 65px 60px;
+  }
+  footer .container .info-block {
+    padding: 0;
+    justify-content: flex-start;
+  }
+  footer .container .img-block {
+    display: block;
+    grid-column: 1/span 2;
+    width: 300px;
+    height: 310px;
+    justify-self: center;
+  }
 }
 
 /*# sourceMappingURL=pets.css.map */

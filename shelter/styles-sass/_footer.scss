@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'typography';
 @import 'icons';
+@import 'breakpoints';
 
 .gradient-background-footer {
   $color1: #513D2F;
@@ -78,5 +79,29 @@ footer .container {
       letter-spacing: 0.059em;
 
     }
+  }
+
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+    padding: 30px 30px+34px 0 30px+34px;
+    display: grid;
+    grid-template-columns: 278px 302px;
+    grid-template-rows: 234px 1fr;
+    gap: 65px 60px;
+
+    .info-block {
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    .img-block {
+      display: block;
+      grid-column: 1/span 2;
+      width: 300px;
+      height: 310px;
+      justify-self: center;
+    }
+
+
+
   }
 }
