@@ -5,6 +5,18 @@
 @import 'shared';
 @import 'card';
 
+:root {
+  --gradient-size: 908px;
+  --gradient-offset: -120px;
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+    --gradient-size: 1165px;
+    --gradient-offset: -90px;
+  }
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    --gradient-size: 823px;
+    --gradient-offset: -90px;
+  }
+}
 
 .gradient-background-header {
   $color1: #211F20;
@@ -12,7 +24,9 @@
   $color3: #262425;
 
   background: url("../assets/images/noise_transparent.png"),
-  left top / 100% 908px radial-gradient(ellipse 50% 50% at 0 0, $color2, $color3);
+  left top / 100% var(--gradient-size) radial-gradient(ellipse 50% 50% at 0 0, $color2, $color3);
+
+
 }
 
 .gradient-background-hero {
@@ -20,9 +34,8 @@
   $color2: #5B483A;
   $color3: #262425;
 
-  // 120px is 180px - 60px padding
   background: url("../assets/images/noise_transparent.png"),
-  left -120px / 100% 908px radial-gradient(ellipse 50% 50% at 0 0, $color2, $color3);
+  left var(--gradient-offset) / 100% var(--gradient-size) radial-gradient(ellipse 50% 50% at 0 0, $color2, $color3);
 }
 
 .container.hero {
@@ -52,6 +65,27 @@
       color: $color-dark-s;
     }
   }
+
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+
+    .info-block {
+      padding-top: 0;
+      width: 460px;
+
+      a {
+        align-self: center;
+      }
+    }
+
+    .img-block {
+      align-self: flex-end;
+      width: 569px;
+      height: 593px;
+    }
+  }
 }
 
 #about.container {
@@ -76,6 +110,18 @@
       @include paragraph-l();
       margin: 0;
       padding-top: 25px;
+    }
+  }
+
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 80px;
+
+    .info-block {
+      width: 430px;
     }
   }
 }
@@ -112,6 +158,21 @@
       justify-content: space-between;
       align-items: center;
       gap: 90px;
+    }
+  }
+
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+
+    .inner-container {
+      gap: 12px;
+
+      .card-container {
+        gap: 40px;
+
+        .card:nth-child(3) {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -159,6 +220,20 @@
         color: $color-dark-l;
       }
 
+    }
+  }
+  @media #{map-get(map-get($breakpoints, medium), query)} {
+    padding-left: 0;
+    padding-right: 0;
+
+    .inner-container {
+      width: 630px;
+      height: 449px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 55px 60px;
     }
   }
 }

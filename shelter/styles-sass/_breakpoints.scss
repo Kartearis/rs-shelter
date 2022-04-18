@@ -1,0 +1,20 @@
+$default-site-width: 1280px;
+$breakpoints: (
+        "medium": (
+                'size': 768px,
+                'query': "(min-width: 768px) and (max-width: 1279px)"
+        ),
+        "small": (
+                'size': 320px,
+                'query': "(min-width: 320px) and (max-width: 767px)"
+        )
+);
+
+:root {
+  --site-width: #{$default-site-width};
+  @each $size, $boundaries in $breakpoints {
+    @media #{map-get($boundaries, query)} {
+      --site-width: #{map-get($boundaries, size)};
+    }
+  }
+}

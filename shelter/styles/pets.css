@@ -1,3 +1,17 @@
+:root {
+  --site-width: 1280px;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  :root {
+    --site-width: 768px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  :root {
+    --site-width: 320px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -18,17 +32,33 @@ body {
   background-color: #292929;
   color: #4C4C4C;
 }
+@media (min-width: 1441px) {
+  body main {
+    flex-grow: 1;
+  }
+}
 
 .container {
-  width: 1280px;
+  width: var(--site-width);
   margin-left: auto;
   margin-right: auto;
   padding-left: 40px;
   padding-right: 40px;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 
 .container.header {
   padding-top: 60px;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .container.header {
+    padding-top: 30px;
+  }
 }
 
 .navigation {
