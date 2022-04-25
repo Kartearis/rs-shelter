@@ -221,6 +221,13 @@
       justify-content: space-between;
       align-items: center;
       gap: 90px;
+      width: 1000px;
+      overflow: hidden;
+
+      .card.pushed-left {
+        --push-amount: 0;
+        transform: translateX(calc(0px - var(--push-amount)));
+      }
     }
   }
 

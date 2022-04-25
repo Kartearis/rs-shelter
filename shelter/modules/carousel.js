@@ -9,17 +9,15 @@ export default class Carousel {
 
 
     /**
-     * Initializes a carousel on given element (it must have buttons with ids prev and next and div.card-container).
+     * Initializes a carousel on given element (it must have buttons with data-carousel-left|data-carousel-right and next and div.card-container).
      *
      * @param element reference to carousel element
      */
     constructor(element) {
-        console.log("Initializing carousel");
         this.element = element;
         this.calculateCardAmount();
         this.refill();
         this.bindEvents();
-        console.log("Carousel initialized");
     }
 
     /**
@@ -27,8 +25,8 @@ export default class Carousel {
      */
     bindEvents() {
         window.addEventListener('resize', () => this.calculateCardAmount());
-        this.element.querySelector("[data-carousel-left]").addEventListener("click", () => this.refill());
-        this.element.querySelector("[data-carousel-right]").addEventListener("click", () => this.refill());
+        this.element.querySelector("[data-carousel-left]").addEventListener("click", () => this.refill("left"));
+        this.element.querySelector("[data-carousel-right]").addEventListener("click", () => this.refill("right"));
     }
 
     /**
@@ -48,10 +46,19 @@ export default class Carousel {
     /**
      * Refills carousel with cards based on current card amount and previous values
      */
-    refill() {
+    async refill(direction) {
+        let insertLocation = "beforeend";
+        let movementDirection = -1;
+        if (direction === "left")
+        {
+            insertLocation = "afterbegin";
+            movementDirection = 1;
+        }
         this.current = this.generatePets(this.cardAmount, this.current);
         let container = this.element.querySelector('.card-container');
-        container.innerHTML = "";
+        let oldCards = Array.from(container.querySelectorAll(".card"));
+        // Increase semaphore for each click
+        oldCards.forEach(x => x.dataset.semaphore = x.dataset.semaphore === undefined ? 0 : parseInt(x.dataset.semaphore) + 1);
         for (let pet of this.current) {
             let cardLayout = `
                 <div class="card">
@@ -60,11 +67,65 @@ export default class Carousel {
                     <button class="button">Learn more</button>
                 </div>
             `;
-            container.insertAdjacentHTML("beforeend", cardLayout);
+            container.insertAdjacentHTML(insertLocation, cardLayout);
         }
+        // let newCards = Array.from(container.querySelectorAll(".card")).filter(x => !oldCards.includes(x));
+        // Move all old cards
+        let moveAmount = movementDirection * (270 * oldCards.length + 90 * oldCards.length);
+        let keyframes = [
+            { transform: `translateX(${moveAmount}px)` }
+        ];
+        if (direction === 'left')
+            keyframes = [
+                { transform: `translateX(-${moveAmount}px)` },
+                { transform: `translateX(0)` },
+            ];
+        let duration = {
+            duration: 1000
+        };
+        container.querySelectorAll(".card").forEach(x => x.animate(keyframes, duration));
+        // Elements will be removed only on final removal
+        oldCards.forEach(x => this.#setupActionOnAnimationFinish(x, el => this.#removeBasedOnSemaphore(el)));
+    }
 
+    /**
+     * Removes element if its semaphore attribute is 0, else decreases it
+     * @param element Reference to element
+     */
+    #removeBasedOnSemaphore(element) {
+        if (element.dataset.semaphore && element.dataset.semaphore > 0)
+            element.dataset.semaphore--;
+        else element.remove();
+    }
 
+    #setupActionOnAnimationFinish(element, action) {
+        Promise.all(
+            element.getAnimations().map(
+                function(animation) {
+                    return animation.finished
+                }
+            )
+        ).then(() => action(element));
+    }
 
+    #waitForElements(selector, amount) {
+        return new Promise(resolve => {
+            if (this.element.querySelectorAll(selector).length === amount) {
+                return resolve(true);
+            }
+
+            const observer = new MutationObserver(mutations => {
+                if (this.element.querySelectorAll(selector).length === amount) {
+                    observer.disconnect();
+                    return resolve(true);
+                }
+            });
+
+            observer.observe(this.element, {
+                childList: true,
+                subtree: true
+            });
+        });
     }
 
     /**

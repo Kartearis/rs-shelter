@@ -719,8 +719,8 @@ a.logo-link .logo {
 #about.container {
   padding-top: 80px;
   padding-bottom: 100px;
-  padding-left: 215px;
-  padding-right: 215px;
+  padding-left: calc(40px + 175px);
+  padding-right: calc(40px + 175px);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -830,6 +830,12 @@ a.logo-link .logo {
   justify-content: space-between;
   align-items: center;
   gap: 90px;
+  width: 1000px;
+  overflow: hidden;
+}
+#pets.container .inner-container .card-container .card.pushed-left {
+  --push-amount: 0;
+  transform: translateX(calc(0px - var(--push-amount)));
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   #pets.container .inner-container {
