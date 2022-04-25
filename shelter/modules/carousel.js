@@ -70,8 +70,10 @@ export default class Carousel {
             container.insertAdjacentHTML(insertLocation, cardLayout);
         }
         // let newCards = Array.from(container.querySelectorAll(".card")).filter(x => !oldCards.includes(x));
-        // Move all old cards
-        let moveAmount = movementDirection * (270 * oldCards.length + 90 * oldCards.length);
+        // gap is received from current css
+        let gap = parseInt(window.getComputedStyle(container).gap);
+        console.log(gap);
+        let moveAmount = movementDirection * (270 * oldCards.length + gap * oldCards.length);
         let keyframes = [
             { transform: `translateX(${moveAmount}px)` }
         ];
