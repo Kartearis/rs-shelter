@@ -384,7 +384,7 @@ header {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
-  #pets.container .card-container .card:nth-last-child(-n+2) {
+  #pets.container .card-container .card:nth-child(n+7) {
     display: none;
   }
   #pets.container .button-container {
@@ -410,7 +410,7 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
   }
-  #pets.container .card-container .card:nth-last-child(-n+5) {
+  #pets.container .card-container .card:nth-child(n+4) {
     display: none;
   }
   #pets.container .button-container {

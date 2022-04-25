@@ -12,6 +12,7 @@ export default class Pagination {
         this.cards = this.generateCards();
         this.calculateCardAmount();
         this.bindEvents();
+        this.fillPage(1);
     }
 
     fillPage(page) {
