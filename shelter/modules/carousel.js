@@ -6,6 +6,7 @@ export default class Carousel {
     current = [];
 
     cardAmount = 3;
+    newSlideCallBack = null;
 
 
     /**
@@ -18,6 +19,12 @@ export default class Carousel {
         this.calculateCardAmount();
         this.refill();
         this.bindEvents();
+    }
+
+    addNewSlideCallback(callback) {
+        console.log(callback);
+        this.newSlideCallback = callback;
+        console.log(this.newSlideCallback);
     }
 
     /**
@@ -72,7 +79,6 @@ export default class Carousel {
         // let newCards = Array.from(container.querySelectorAll(".card")).filter(x => !oldCards.includes(x));
         // gap is received from current css
         let gap = parseInt(window.getComputedStyle(container).gap);
-        console.log(gap);
         let moveAmount = movementDirection * (270 * oldCards.length + gap * oldCards.length);
         let keyframes = [
             { transform: `translateX(${moveAmount}px)` }
@@ -88,6 +94,10 @@ export default class Carousel {
         container.querySelectorAll(".card").forEach(x => x.animate(keyframes, duration));
         // Elements will be removed only on final removal
         oldCards.forEach(x => this.#setupActionOnAnimationFinish(x, el => this.#removeBasedOnSemaphore(el)));
+        if (this.newSlideCallback) {
+            this.newSlideCallback();
+        }
+
     }
 
     /**

@@ -3,11 +3,14 @@ import pets from "../assets/data/pets.js";
 export default class Popup {
     element = null;
     modal = null;
+    pathPrefix = "";
 
-    constructor(element) {
-        this.element = element;
-        this.bindEvents();
-
+    constructor(element, pathPrefix = "") {
+        if (!element.dataset.popup) {
+            this.element = element;
+            this.pathPrefix = pathPrefix;
+            this.bindEvents();
+        }
     }
 
     bindEvents() {
@@ -20,7 +23,7 @@ export default class Popup {
         let modalLayout = `
             <div class="overlay">
                 <div class="modal">
-                    <img class="img-block" src="../${pet.img}">
+                    <img class="img-block" src="${this.pathPrefix}${pet.img}">
                     <div class="info-block">
                         <div class="headers">
                             <h3>${pet.name}</h3>

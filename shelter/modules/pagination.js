@@ -6,6 +6,7 @@ export default class Pagination {
     element = null;
     currentPage = 1;
     cardAmount = 8;
+    newPageCallback = null;
 
     constructor(element) {
         this.element = element;
@@ -13,6 +14,10 @@ export default class Pagination {
         this.calculateCardAmount();
         this.bindEvents();
         this.fillPage(1);
+    }
+
+    addCallbackOnNewPage(callback) {
+        this.newPageCallback = callback;
     }
 
     fillPage(page) {
@@ -29,6 +34,8 @@ export default class Pagination {
             `;
             container.insertAdjacentHTML("beforeend", cardLayout);
         }
+        if (this.newPageCallback)
+            this.newPageCallback();
     }
 
     bindEvents() {
