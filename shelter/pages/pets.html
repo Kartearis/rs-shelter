@@ -28,7 +28,7 @@
     </section>
 </header>
 <main class="background-color-light-l">
-    <section id="pets" class="container">
+    <section id="pets" class="container" data-pagination>
         <h3>Our friends who<br>
             are looking for a house</h3>
         <div class="card-container">
@@ -74,11 +74,11 @@
             </div>
         </div>
         <div class="button-container">
-            <button disabled class="button circle"> << </button>
-            <button disabled class="button circle"> < </button>
-            <button class="button circle active"> 1 </button>
-            <button class="button circle"> > </button>
-            <button class="button circle"> >> </button>
+            <button disabled class="button circle" data-pagination-start> << </button>
+            <button disabled class="button circle" data-pagination-prev> < </button>
+            <button class="button circle active" data-pagination-page> 1 </button>
+            <button class="button circle" data-pagination-next> > </button>
+            <button class="button circle" data-pagination-end> >> </button>
         </div>
     </section>
 </main>
@@ -97,5 +97,6 @@
         <img class="img-block" src="../assets/images/footer-puppy.png" alt="Happy footer puppy">
     </div>
 </footer>
+<script type="module" src="pets.js"></script>
 </body>
 </html>
