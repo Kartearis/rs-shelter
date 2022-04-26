@@ -23,8 +23,18 @@ export default class Sidebar {
 
     bindEvents() {
         this.button.addEventListener('click', () => this.toggle());
+        this.element.addEventListener('click', (e) => this.processClick(e));
         this.element.querySelectorAll('.nav-item').forEach(x => x.addEventListener('click', () => this.close()));
         this.logo.addEventListener('click', () => this.close());
+    }
+
+    /**
+     * Handles clicks on ::before element.
+     * @param event
+     */
+    processClick(event) {
+        if (event.clientX < document.documentElement.clientWidth - 320)
+            this.close();
     }
 
     open() {

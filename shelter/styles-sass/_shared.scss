@@ -150,6 +150,7 @@ body {
       background-color: $color-dark-3xl;
       transition: right 0.5s;
 
+
       &.active {
         right: 0;
         overflow: scroll;
@@ -229,16 +230,6 @@ a.logo-link {
   }
 }
 
-@media #{map-get(map-get($breakpoints, small), query)} {
-  a.logo-link.side .logo {
-    //position: fixed;
-    //right: 126px;
-    //top: 30px;
-    //z-index: 110;
-    //height: 60px;
-  }
-
-}
 
 @each $colorname, $color in $colors {
   .background-#{$colorname} {

@@ -531,6 +531,17 @@ header {
 .container.header .nav-item.active {
   color: #292929;
 }
+@media (max-width: 767px) {
+  .container.header .nav-item {
+    color: #CDCDCD;
+  }
+  .container.header .nav-item:hover {
+    color: #FAFAFA;
+  }
+  .container.header .nav-item.active {
+    color: #FAFAFA;
+  }
+}
 
 .logo h1 {
   color: #545454;
@@ -539,6 +550,18 @@ header {
   color: #292929;
 }
 
+@media (max-width: 767px) {
+  .logo-link.side .logo h1 {
+    color: #F1CDB3;
+  }
+  .logo-link.side .logo p {
+    color: #FFFFFF;
+  }
+
+  .navigation .menu-button.active {
+    background-color: #F1CDB3;
+  }
+}
 #pets.container {
   padding-top: 80px;
   padding-bottom: 100px;
