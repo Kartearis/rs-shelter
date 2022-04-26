@@ -1,10 +1,12 @@
 @import 'shared';
 @import 'colors';
 @import 'card';
+@import 'popup';
 
 header {
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .container.header {
@@ -79,7 +81,7 @@ header {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
 
-      .card:nth-last-child(-n+2) {
+      .card:nth-child(n+7) {
         display: none;
       }
     }
@@ -102,7 +104,7 @@ header {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(3, 1fr);
 
-      .card:nth-last-child(-n+5) {
+      .card:nth-child(n+4) {
         display: none;
       }
     }

@@ -8,6 +8,22 @@
     <title>Cozy home</title>
 </head>
 <body>
+<!--<div class="overlay">-->
+<!--    <div class="modal">-->
+<!--        <img class="img-block" src="../assets/images/pets/pets-charly.png">-->
+<!--        <div class="info-block">-->
+<!--            <div class="headers">-->
+<!--                <h3>Jennifer</h3>-->
+<!--                <h4>Dog - Labrador</h4>-->
+<!--            </div>-->
+<!--            <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>-->
+<!--            <ul>-->
+<!--                <li><b>Age</b>: 2 months</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <button class="button circle modal-button">X</button>-->
+<!--    </div>-->
+<!--</div>-->
 <header class="background-color-light-xl">
     <section class="container header">
         <nav class="navigation">
@@ -28,57 +44,18 @@
     </section>
 </header>
 <main class="background-color-light-l">
-    <section id="pets" class="container">
+    <section id="pets" class="container" data-pagination>
         <h3>Our friends who<br>
             are looking for a house</h3>
         <div class="card-container">
-            <div class="card">
-                <img src="../assets/images/pets/pets-katrine.png" alt="Katrine the cat">
-                <h5>Katrine</h5>
-                <button class="button">Learn more</button>
-            </div>
-            <div class="card">
-                <img src="../assets/images/pets/pets-jennifer.png" alt="Jennifer the dog">
-                <h5>Jennifer</h5>
-                <button class="button">Learn more</button>
-            </div>
-            <div class="card">
-                <img src="../assets/images/pets/pets-woody.png" alt="Woody the dog">
-                <h5>Woody</h5>
-                <button class="button">Learn more</button>
-            </div>
-            <div class="card">
-                <img src="../assets/images/pets/pets-sophia.png" alt="Sophia the dog">
-                <h5>Sophia</h5>
-                <button class="button">Learn more</button>
-            </div>
-            <div class="card">
-                <img src="../assets/images/pets/pets-timmy.png" alt="Timmy the cat">
-                <h5>Timmy</h5>
-                <button class="button">Learn more</button>
-            </div>
-            <div class="card">
-                <img src="../assets/images/pets/pets-charly.png" alt="Charly the dog">
-                <h5>Charly</h5>
-                <button class="button">Learn more</button>
-            </div>
-            <div class="card">
-                <img src="../assets/images/pets/pets-scarlet.png" alt="Scarlet the dog">
-                <h5>Scarlett</h5>
-                <button class="button">Learn more</button>
-            </div>
-            <div class="card">
-                <img src="../assets/images/pets/pets-freddie.png" alt="Freddie the dog">
-                <h5>Freddie</h5>
-                <button class="button">Learn more</button>
-            </div>
+
         </div>
         <div class="button-container">
-            <button disabled class="button circle"> << </button>
-            <button disabled class="button circle"> < </button>
-            <button class="button circle active"> 1 </button>
-            <button class="button circle"> > </button>
-            <button class="button circle"> >> </button>
+            <button disabled class="button circle" data-pagination-start> << </button>
+            <button disabled class="button circle" data-pagination-prev> < </button>
+            <button class="button circle active" data-pagination-page> 1 </button>
+            <button class="button circle" data-pagination-next> > </button>
+            <button class="button circle" data-pagination-end> >> </button>
         </div>
     </section>
 </main>
@@ -97,5 +74,6 @@
         <img class="img-block" src="../assets/images/footer-puppy.png" alt="Happy footer puppy">
     </div>
 </footer>
+<script type="module" src="pets.js"></script>
 </body>
 </html>

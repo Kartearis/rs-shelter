@@ -4,6 +4,7 @@
 @import 'icons';
 @import 'shared';
 @import 'card';
+@import "popup";
 
 :root {
   --gradient-size: 908px;
@@ -221,6 +222,13 @@
       justify-content: space-between;
       align-items: center;
       gap: 90px;
+      width: 1000px;
+      overflow: hidden;
+
+      .card.pushed-left {
+        --push-amount: 0;
+        transform: translateX(calc(0px - var(--push-amount)));
+      }
     }
   }
 
@@ -231,10 +239,7 @@
 
       .card-container {
         gap: 40px;
-
-        .card:nth-child(3) {
-          display: none;
-        }
+        width: 580px;
       }
     }
   }
@@ -254,11 +259,8 @@
 
       .card-container {
         gap: 40px;
+        width: 270px;
         order: -1;
-
-        .card:not(:nth-child(1)) {
-          display: none;
-        }
       }
     }
   }
