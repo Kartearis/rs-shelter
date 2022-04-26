@@ -6,7 +6,7 @@ export default class Carousel {
     current = [];
 
     cardAmount = 3;
-    newSlideCallBack = null;
+    newSlideCallback = null;
 
 
     /**
@@ -22,9 +22,7 @@ export default class Carousel {
     }
 
     addNewSlideCallback(callback) {
-        console.log(callback);
         this.newSlideCallback = callback;
-        console.log(this.newSlideCallback);
     }
 
     /**

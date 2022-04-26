@@ -88,7 +88,7 @@ body {
   display: none;
   width: 30px;
   height: 22px;
-  transition: transform 0.3s;
+  transition: transform 0.5s;
   margin-right: 43px;
   align-self: center;
 }
@@ -99,6 +99,14 @@ body {
 @media (max-width: 767px) {
   .navigation .menu-button {
     display: block;
+  }
+  .navigation .menu-button.active {
+    position: fixed;
+    right: 53px;
+    top: 45px;
+    margin-right: 0;
+    transform: rotate(90deg);
+    z-index: 110;
   }
 }
 .navigation .nav-list {
@@ -142,7 +150,44 @@ body {
 }
 @media (max-width: 767px) {
   .navigation .nav-list {
-    display: none;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding-top: 248px;
+    padding-left: 39px;
+    padding-right: 39px;
+    z-index: 100;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100vh;
+    background-color: #292929;
+    transition: right 0.5s;
+  }
+  .navigation .nav-list.active {
+    right: 0;
+    overflow: scroll;
+  }
+  .navigation .nav-list.active::before {
+    content: "";
+    z-index: -1;
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #29292999;
+  }
+  .navigation .nav-list .nav-item {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: 32px;
+    line-height: 160%;
   }
 }
 
@@ -163,6 +208,16 @@ a.logo-link:active {
 }
 a.logo-link .logo {
   height: 100%;
+}
+@media (max-width: 767px) {
+  a.logo-link.side {
+    position: fixed;
+    right: 126px;
+    top: 30px;
+    z-index: 110;
+    height: 60px;
+    padding-left: 2px;
+  }
 }
 
 .logo {
@@ -476,6 +531,17 @@ header {
 .container.header .nav-item.active {
   color: #292929;
 }
+@media (max-width: 767px) {
+  .container.header .nav-item {
+    color: #CDCDCD;
+  }
+  .container.header .nav-item:hover {
+    color: #FAFAFA;
+  }
+  .container.header .nav-item.active {
+    color: #FAFAFA;
+  }
+}
 
 .logo h1 {
   color: #545454;
@@ -484,6 +550,18 @@ header {
   color: #292929;
 }
 
+@media (max-width: 767px) {
+  .logo-link.side .logo h1 {
+    color: #F1CDB3;
+  }
+  .logo-link.side .logo p {
+    color: #FFFFFF;
+  }
+
+  .navigation .menu-button.active {
+    background-color: #F1CDB3;
+  }
+}
 #pets.container {
   padding-top: 80px;
   padding-bottom: 100px;

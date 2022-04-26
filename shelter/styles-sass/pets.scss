@@ -24,6 +24,21 @@ header {
       color: $color-dark-3xl;
     }
   }
+
+  @media #{map-get(map-get($breakpoints, small), query)} {
+    .nav-item {
+      color: $color-dark-s;
+
+      &:hover {
+        color: $color-light-s;
+      }
+
+      &.active {
+        color: $color-light-s;
+      }
+    }
+  }
+
 }
 
 .logo {
@@ -33,6 +48,22 @@ header {
 
   p {
     color: $color-dark-3xl;
+  }
+}
+
+@media #{map-get(map-get($breakpoints, small), query)} {
+  .logo-link.side .logo {
+    h1 {
+      color: $color-primary;
+    }
+
+    p {
+      color: $color-light-xl;
+    }
+  }
+
+  .navigation .menu-button.active {
+    background-color: $color-primary;
   }
 }
 
