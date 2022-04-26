@@ -26,6 +26,7 @@ export default class Sidebar {
         this.element.addEventListener('click', (e) => this.processClick(e));
         this.element.querySelectorAll('.nav-item').forEach(x => x.addEventListener('click', () => this.close()));
         this.logo.addEventListener('click', () => this.close());
+        window.addEventListener('resize', () => this.onResize());
     }
 
     /**
@@ -34,6 +35,11 @@ export default class Sidebar {
      */
     processClick(event) {
         if (event.clientX < document.documentElement.clientWidth - 320)
+            this.close();
+    }
+
+    onResize() {
+        if (!window.matchMedia("(max-width: 767px)").matches)
             this.close();
     }
 
