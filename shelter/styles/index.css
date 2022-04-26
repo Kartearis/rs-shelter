@@ -667,6 +667,8 @@ a.logo-link .logo {
   height: 500px;
 }
 .overlay .modal .info-block {
+  overflow: scroll;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -696,6 +698,8 @@ a.logo-link .logo {
 }
 .overlay .modal .info-block ul {
   list-style: none;
+  margin: 0;
+  padding: 15px;
 }
 .overlay .modal .info-block li {
   margin-top: 5px;
@@ -716,6 +720,40 @@ a.logo-link .logo {
   letter-spacing: 0.06em;
 }
 
+@media (min-width: 768px) and (max-width: 1279px) {
+  .overlay .modal {
+    width: 630px;
+    height: 350px;
+    gap: 5px;
+  }
+  .overlay .modal .img-block {
+    width: 350px;
+    height: 350px;
+  }
+  .overlay .modal .info-block {
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .overlay .modal {
+    width: 240px;
+    height: 341px;
+    gap: 5px;
+  }
+  .overlay .modal .img-block {
+    display: none;
+  }
+  .overlay .modal .info-block {
+    gap: 20px;
+    padding: 10px;
+  }
+  .overlay .modal .info-block .headers {
+    align-self: center;
+  }
+  .overlay .modal .info-block .headers h3, .overlay .modal .info-block .headers h4 {
+    text-align: center;
+  }
+}
 :root {
   --gradient-size: 908px;
   --gradient-offset: -120px;

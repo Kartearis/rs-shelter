@@ -47,6 +47,8 @@
     }
 
     .info-block {
+      overflow: scroll;
+      height: 100%;
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -71,6 +73,8 @@
 
       ul {
         list-style: none;
+        margin: 0;
+        padding: 15px;
       }
 
       li {
@@ -89,6 +93,52 @@
 
       p {
         @include h5();
+      }
+    }
+  }
+}
+
+@media #{map-get(map-get($breakpoints, medium), query)} {
+  .overlay {
+    .modal {
+      width: 630px;
+      height: 350px;
+      gap: 5px;
+
+      .img-block {
+        width: 350px;
+        height: 350px;
+      }
+
+      .info-block {
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media #{map-get(map-get($breakpoints, small), query)} {
+  .overlay {
+    .modal {
+      width: 240px;
+      height: 341px;
+      gap: 5px;
+
+      .img-block {
+        display: none;
+      }
+
+      .info-block {
+        gap: 20px;
+        padding: 10px;
+
+        .headers {
+          align-self: center;
+
+          h3, h4 {
+            text-align: center;
+          }
+        }
       }
     }
   }
